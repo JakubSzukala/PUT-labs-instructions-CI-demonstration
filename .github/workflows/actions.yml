@@ -38,4 +38,17 @@ jobs:
           name: linkcheck_out
           path: build/linkcheck
 
+  # This has to be prepped manually, but it represents general case that cannot
+  # automated in Sphinx only, but other tools are necessary
+  test-api-access:
+    needs: build-artifacts
+    runs-on: ubuntu-latest
+    env:
+      WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
+    steps:
+      - name: Test Weather API access
+        run: |
+          curl "https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=$WEATHER_API_KEY"
+
+
 
