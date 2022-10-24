@@ -2,7 +2,7 @@ name: PUT-labs-instructions-CI-demonstration
 
 # Run on schedule, cron syntax, everyday at 9:45
 on:
-  push
+  push:
   schedule:
     - cron:  '45 9 * * *'
 
