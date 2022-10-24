@@ -17,6 +17,7 @@ jobs:
     steps:
       - name: Path test
         run: echo "$HTML_OUT"
+      - name: Second path test
         run: echo "$LINKCHECK_OUT"
       - uses: actions/checkout@v3
       - name: Install Sphinx
