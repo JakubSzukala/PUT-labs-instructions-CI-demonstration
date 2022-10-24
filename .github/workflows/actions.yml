@@ -44,7 +44,7 @@ jobs:
     needs: build-artifacts
     runs-on: ubuntu-latest
     env:
-      WEATHER_API_KEY: ${{ secrets.EATHER_API_KEY }}
+      WEATHER_API_KEY: '${{ secrets.WEATHER_API_KEY }}'
     steps:
       - name: Test curl string
         run: |
