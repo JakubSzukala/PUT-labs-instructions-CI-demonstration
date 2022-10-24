@@ -61,7 +61,11 @@ jobs:
           pip install robotframework robotframework-requests
       - name: Test Weather API access with RobotTestingFramework
         run: |
-          robot --variable WEATHER_API_KEY:${WEATHER_API_KEY} robot-tests/api_test.robot
+          robot --variable WEATHER_API_KEY:${WEATHER_API_KEY} -d build/robot robot-tests/api_test.robot
+      - uses: actions/upload-artifact@v3
+        with:
+          name: robot_api_out
+          path: build/robot
 
 
 
