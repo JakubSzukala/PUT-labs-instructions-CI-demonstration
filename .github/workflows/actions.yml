@@ -8,16 +8,22 @@ on:
 
 jobs:
   tests: # We could also specify range of Python versions and modules versions to run tests against
-    runs-on: sphinxdoc/sphinx
+    runs-on: ubuntu-latest
     steps:
+      - name: Install Sphinx
+        run: |
+          apt-get install python3-sphinx
       - name: Stub
         run: |
           ls
 
   build-artifacts:
-    runs-on: sphinxdoc/sphinx
-    
+    runs-on: ubuntu-latest
+
     steps:
+      - name: Install Sphinx
+        run: |
+          apt-get install python3-sphinx
       - name: Build HTML artifacts
         run: |
           sphinx-build -E -W -b html source build/html
