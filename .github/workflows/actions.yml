@@ -1,0 +1,25 @@
+name: PUT-labs-instructions-CI-demonstration
+
+# Run on schedule, cron syntax, everyday at 9:45
+on:
+  push
+  schedule:
+    - cron:  '45 9 * * *'
+
+jobs:
+  tests: # We could also specify range of Python versions and modules versions to run tests against
+    runs-on: sphinxdoc/sphinx
+    steps:
+      - name: Stub
+        run: |
+          ls
+
+  build-artifacts:
+    runs-on: sphinxdoc/sphinx
+    
+    steps:
+      - name: Build HTML artifacts
+        run: |
+          sphinx-build -E -W -b html source build/html
+        path: build/html
+
