@@ -25,11 +25,11 @@ jobs:
           sudo apt-get install python3-sphinx
       - name: Build HTML artifacts
         run: |
-          sphinx-build -E -W -b html source $HTML_OUT
+          sphinx-build -E -W -b html source "$HTML_OUT"
       - uses: actions/upload-artifact@v3
         with:
           name: lab_html
-          path: $HTML_OUT
+          path: "$HTML_OUT"
 
   test-external-links:
     needs: build-artifacts
@@ -41,10 +41,10 @@ jobs:
           sudo apt-get install python3-sphinx
       - name: Test external links with linkcheck builder
         run: |
-          sphinx-build -E -W -b linkcheck source $LINKCHECK_OUT
+          sphinx-build -E -W -b linkcheck source "$LINKCHECK_OUT"
       - uses: actions/upload-artifact@v3
         with:
           name: linkcheck_out
-          path: $LINKCHECK_OUT
+          path: "$LINKCHECK_OUT"
 
 
