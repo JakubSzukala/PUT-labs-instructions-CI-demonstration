@@ -21,5 +21,8 @@ jobs:
       - name: Build HTML artifacts
         run: |
           sphinx-build -E -W -b html source build/html
-        path: build/html
+      - uses: actions/upload-artifact@v3
+        with:
+          name: output_doc
+          path: build/html
 
