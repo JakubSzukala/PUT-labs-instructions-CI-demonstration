@@ -6,6 +6,9 @@ on:
   schedule:
     - cron:  '45 9 * * *'
 
+env:
+  WEATHER_API_KEY: '${{ secrets.WEATHER_API_KEY }}'
+
 jobs:
   build-artifacts:
     runs-on: ubuntu-latest
@@ -43,8 +46,6 @@ jobs:
   test-api-access:
     needs: build-artifacts
     runs-on: ubuntu-latest
-    env:
-      WEATHER_API_KEY: '${{ secrets.WEATHER_API_KEY }}'
     steps:
       - name: Echo secret test
         run: |
