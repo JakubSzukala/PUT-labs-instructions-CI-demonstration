@@ -25,11 +25,11 @@ jobs:
           sudo apt-get install python3-sphinx
       - name: Build HTML artifacts
         run: |
-          sphinx-build -E -W -b html source "$HTML_OUT"
+          sphinx-build -E -W -b html source build/html
       - uses: actions/upload-artifact@v3
         with:
           name: lab_html
-          path: "$HTML_OUT"
+          path: build/html
 
   test-external-links:
     needs: build-artifacts
