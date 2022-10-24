@@ -46,6 +46,9 @@ jobs:
     env:
       WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
     steps:
+      - name: Test curl string
+        run: |
+          echo "https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=$WEATHER_API_KEY"
       - name: Test Weather API access
         run: |
           curl "https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=$WEATHER_API_KEY"
