@@ -43,13 +43,27 @@ jobs:
 
   # This has to be prepped manually, but it represents general case that cannot
   # automated in Sphinx only, but other tools are necessary
-  test-api-access:
+  test-api-access-curl:
     needs: build-artifacts
     runs-on: ubuntu-latest
     steps:
-      - name: Test Weather API access
+      - name: Test Weather API access with curl
         run: |
           curl --fail "https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=${WEATHER_API_KEY}"
+
+  test-api-access-robot:
+    needs: build-artifacts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install RobotTestingFramework with Request library
+        run: |
+          pip install robotframework robotframework-requests
+      - name: Test Weather API access with RobotTestingFramework
+        run: |
+          robot --variable WEATHER_API_KEY:${WEATHER_API_KEY} robot-tests/api_test.robot
+
+
 
 
 
