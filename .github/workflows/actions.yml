@@ -47,12 +47,6 @@ jobs:
     needs: build-artifacts
     runs-on: ubuntu-latest
     steps:
-      - name: Echo secret test
-        run: |
-          echo "${WEATHER_API_KEY}"
-      - name: Test curl string
-        run: |
-          echo "https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=${WEATHER_API_KEY}"
       - name: Test Weather API access
         run: |
           curl "https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=${WEATHER_API_KEY}"
