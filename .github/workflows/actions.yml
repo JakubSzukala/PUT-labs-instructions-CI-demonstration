@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Install Sphinx
         run: |
-          apt-get install python3-sphinx
+          sudo apt-get install python3-sphinx
       - name: Stub
         run: |
           ls
@@ -23,7 +23,7 @@ jobs:
     steps:
       - name: Install Sphinx
         run: |
-          apt-get install python3-sphinx
+          sudo apt-get install python3-sphinx
       - name: Build HTML artifacts
         run: |
           sphinx-build -E -W -b html source build/html
