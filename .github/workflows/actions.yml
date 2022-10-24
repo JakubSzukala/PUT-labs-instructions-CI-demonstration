@@ -1,26 +1,19 @@
 name: PUT-labs-instructions-CI-demonstration
 
-# Run on schedule, cron syntax, everyday at 9:45
+# Run on schedule, cron syntax, everyday at 9:45 and on push
 on:
   push:
   schedule:
     - cron:  '45 9 * * *'
 
-jobs:
-  tests: # We could also specify range of Python versions and modules versions to run tests against
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Install Sphinx
-        run: |
-          sudo apt-get install python3-sphinx
-      - name: Stub
-        run: |
-          ls
+env:
+  HTML_OUT: build/html
+  LINKCHECK_OUT: build/linkcheck
+  DOCTEST_OUT: build/doctest
 
+jobs:
   build-artifacts:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
       - name: Install Sphinx
@@ -28,9 +21,26 @@ jobs:
           sudo apt-get install python3-sphinx
       - name: Build HTML artifacts
         run: |
-          sphinx-build -E -W -b html source build/html
+          sphinx-build -E -W -b html source $HTML_OUT
       - uses: actions/upload-artifact@v3
         with:
-          name: output_doc
-          path: build/html
+          name: lab_html
+          path: $HTML_OUT
+
+  test-external-links:
+    needs: build-artifacts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Sphinx # Sphinx installation is duplicated...
+        run: |
+          sudo apt-get install python3-sphinx
+      - name: Test external links with linkcheck builder
+        run: |
+          sphinx-build -E -W -b linkcheck source $LINKCHECK_OUT
+      - uses: actions/upload-artifact@v3
+        with:
+          name: linkcheck_out
+          path: $LINKCHECK_OUT
+
 
