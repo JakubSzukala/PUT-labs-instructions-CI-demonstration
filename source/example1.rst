@@ -113,7 +113,7 @@ In general, to perform such test we have to create two blocks:
 See the CI `job for code snippets testing`_ in this repository for details and `source code`_ for this document to see syntax of these blocks.
 
 .. _source code: https://raw.githubusercontent.com/JakubSzukala/PUT-labs-instructions-CI-demonstration/main/source/example1.rst
-.. _job for code snippets testing: https://github.com/JakubSzukala/PUT-labs-instructions-CI-demonstration/blob/main/.github/workflows/actions.yml#L44-L61
+.. _job for code snippets testing: https://github.com/JakubSzukala/PUT-labs-instructions-CI-demonstration/blob/main/.github/workflows/actions.yml#L44
 
 Test simple print statement
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
