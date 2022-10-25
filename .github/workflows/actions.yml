@@ -10,7 +10,7 @@ env:
   WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY1 }}
 
 jobs:
-  build-artifacts:
+  build-to-html:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -52,7 +52,7 @@ jobs:
       - name: Test code snippets
         run: |
           sphinx-build -E -W -b doctest source build/doctest
-      - uses: actions/upload-artifacts@v3
+      - uses: actions/upload-artifact@v3
         with:
           name: doctest_out
           path: build/doctest
