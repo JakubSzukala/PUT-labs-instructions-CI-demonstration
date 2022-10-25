@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Install Sphinx
         run: |
-          sudo apt-get install python3-sphinx
+          sudo apt-get update && sudo apt-get install python3-sphinx
       - name: Build HTML artifacts
         run: |
           sphinx-build -E -W -b html source build/html
@@ -32,7 +32,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Install Sphinx # Sphinx installation is duplicated...
         run: |
-          sudo apt-get install python3-sphinx
+          sudo apt-get update && sudo apt-get install python3-sphinx
       - name: Test external links with linkcheck builder
         run: |
           sphinx-build -E -W -b linkcheck source build/linkcheck
@@ -48,7 +48,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Install Sphinx
         run: |
-          sudo apt-get install python3-sphinx
+          sudo apt-get update && sudo apt-get install python3-sphinx
       - name: Install Python dependencies
         run: |
           sudo pip install numpy
