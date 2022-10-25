@@ -82,7 +82,7 @@ was suppose to download are now hosted in different place.
 See the CI `job for hyperlinks testing`_ in this repository for details.
 
 .. _link: https://jug.dpieczynski.pl/lab-ead/Lab%2002%20-%20SQL,%20RESTful%20API.html
-.. _job for hyperlinks testing: https://github.com/JakubSzukala/PUT-labs-instructions-CI-demonstration/blob/main/.github/workflows/actions.yml#L28-L42
+.. _job for hyperlinks testing: https://github.com/JakubSzukala/PUT-labs-instructions-CI-demonstration/blob/main/.github/workflows/actions.yml#L28
 
 Testing embedded code snippets
 ------------------------------
@@ -183,7 +183,7 @@ This will make an API call with API key restored from GitHub secrets.
 
 See the CI `job for testing authorized access`_ for details.
 
-.. _job for testing authorized access: https://github.com/JakubSzukala/PUT-labs-instructions-CI-demonstration/blob/main/.github/workflows/actions.yml#L63-L69
+.. _job for testing authorized access: https://github.com/JakubSzukala/PUT-labs-instructions-CI-demonstration/blob/main/.github/workflows/actions.yml#L63
 
 More general and structured test with RobotTestingFramework
 -----------------------------------------------------------
@@ -222,7 +222,7 @@ access the key protected API.
 
 See the CI `job for testing with robotframework`_ for details.
 
-.. _job for testing with robotframework: https://github.com/JakubSzukala/PUT-labs-instructions-CI-demonstration/blob/main/.github/workflows/actions.yml#L71-L85
+.. _job for testing with robotframework: https://github.com/JakubSzukala/PUT-labs-instructions-CI-demonstration/blob/main/.github/workflows/actions.yml#L71
 
 Summary
 =======
