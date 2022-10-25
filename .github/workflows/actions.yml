@@ -49,6 +49,9 @@ jobs:
       - name: Install Sphinx
         run: |
           sudo apt-get install python3-sphinx
+      - name: Install Python dependencies
+        run: |
+          sudo pip install numpy
       - name: Test code snippets
         run: |
           sphinx-build -E -W -b doctest source build/doctest
