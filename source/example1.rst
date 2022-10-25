@@ -14,7 +14,7 @@ building, testing frameworks) to make laboratory instructions more robust and er
 I tried to provide simple solution that will be:
 
 * practical
-* will provide good results
+* robust
 * not overwhelming to introduce
 
 Particular issues that all documentation or instructions face:
@@ -24,15 +24,15 @@ Particular issues that all documentation or instructions face:
 * Code snippets logic errors
 * Code snippets being outdated / deprecated because of some library API update
 
-My proposed solution to the issues would be to use Sphinx (or any other
-documenting framework) within CI and supplement it with more general tools, like
-RobotTestingFramework.
+My proposed solution to the issues would be to use **Sphinx** (or any other
+documenting framework) **within CI** and supplement it with more general tools, like
+**RobotTestingFramework** (if necessary).
 
 Advantages of using CI with Sphinx and other DevOps tools:
 
 * Sphinx by default uses reStructuredText - range of usefull features, clean formatting and instructions structure tree
 * reStructuredText can be **compiled into HTML and embeded as a static website** (like EAD instructions)
-* Sphinx provides range of usefull features apart from clean formatting like **links validation and code snippets validation**
+* Sphinx provides range of usefull features apart from clean formatting, like **links validation and code snippets validation**
 * Process of building instructions into HTML and then testing their contents can be **automated** in CI (Continous Integration)
 * If tests were performed in CI, they could be done on **daily basis**, which means that automated tests would catch errors before students do (avoiding students confusion when examples or link in instruction is not working)
 * **When a daily test fails it can send a prompt to the maintainer that there is an issue that needs to be fixed**
@@ -55,7 +55,10 @@ Testing description
 
 Below I present basic tests examples, structure and rationale behind using
 those. Each paragraph contains also a link to the implementation of of described
-solution in this repository.
+solution in this repository. All this examples are run in this repository's GitHub
+`actions CI`_.
+
+.. _actions CI: https://github.com/JakubSzukala/PUT-labs-instructions-CI-demonstration/actions
 
 Hyperlinks testing
 ------------------
@@ -69,7 +72,7 @@ To perform such tests it is enough to run from command line following command:
 .. code-block:: bash
     :caption: Validate external links
 
-    $ sphinx-build -E -W -b linkcheck source build
+    $ sphinx-build -E -W -b linkcheck source build/linkcheck
 
 External valid link_ that will be tested in CI (EAD laboratory instruction).
 
@@ -227,3 +230,5 @@ Summary
 
 Basically anything that is headless can be tested. Obviously, not anything has to
 be, so it is important to make some rational borders.
+
+See source code for that document and CI.
