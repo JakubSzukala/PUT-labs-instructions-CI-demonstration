@@ -41,8 +41,22 @@ jobs:
           name: linkcheck_out
           path: build/linkcheck
 
-  # This has to be prepped manually, but it represents general case that cannot
-  # automated in Sphinx only, but other tools are necessary
+  test-code-snippets:
+    needs: build-artifacts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Sphinx
+        run: |
+          sudo apt-get install python3-sphinx
+      - name: Test code snippets
+        run: |
+          sphinx-build -E -W -b doctest source build/doctest
+      - uses: actions/upload-artifacts@v3
+        with:
+          name: doctest_out
+          path: build/doctest
+
   test-api-access-curl:
     needs: build-artifacts
     runs-on: ubuntu-latest
