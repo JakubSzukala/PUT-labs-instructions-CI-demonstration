@@ -26,7 +26,7 @@ jobs:
           path: build/html
 
   test-external-links:
-    needs: build-artifacts
+    needs: build-to-html
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -42,7 +42,7 @@ jobs:
           path: build/linkcheck
 
   test-code-snippets:
-    needs: build-artifacts
+    needs: build-to-html
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -58,7 +58,7 @@ jobs:
           path: build/doctest
 
   test-api-access-curl:
-    needs: build-artifacts
+    needs: build-to-html
     runs-on: ubuntu-latest
     steps:
       - name: Test Weather API access with curl
@@ -66,7 +66,7 @@ jobs:
           curl --fail "https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=${WEATHER_API_KEY}"
 
   test-api-access-robot:
-    needs: build-artifacts
+    needs: build-to-html
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
