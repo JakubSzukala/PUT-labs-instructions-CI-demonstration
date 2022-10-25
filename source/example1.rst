@@ -31,7 +31,7 @@ RobotTestingFramework.
 Advantages of using CI with Sphinx and other DevOps tools:
 
 * Sphinx by default uses reStructuredText - range of usefull features, clean formatting and instructions structure tree
-* reStructuredText can be **compiled into HTML and embeded as a static website** (like EAD instructions_)
+* reStructuredText can be **compiled into HTML and embeded as a static website** (like EAD instructions)
 * Sphinx provides range of usefull features apart from clean formatting like **links validation and code snippets validation**
 * Process of building instructions into HTML and then testing their contents can be **automated** in CI (Continous Integration)
 * If tests were performed in CI, they could be done on **daily basis**, which means that automated tests would catch errors before students do (avoiding students confusion when examples or link in instruction is not working)
@@ -45,8 +45,6 @@ Advantages of using CI with Sphinx and other DevOps tools:
 **I would say that the biggest takeaway would be effortless testing on a daily
 basis, which would ensure that most of the problems could be identified and
 resolved before actuall laboratory class.**
-
-.. _instructions: https://jug.dpieczynski.pl/lab-ead/Lab%2000%20-%20Wst%C4%99p.html
 
 .. figure:: _static/ci-cd.jpg
 
