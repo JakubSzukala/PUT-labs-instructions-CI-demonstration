@@ -9,10 +9,9 @@ the instruction reader, a person new to the subject will obviously be confused a
 At this point, supervisor will have to be involved and resolve the problem, often
 during precious laboratory time.
 
-In this small side project I tried to use DevOps (CI, in cloud documentation
-building, testing frameworks) tools to aid common issues
-occuring in documentation and laboratory instructions. I tried to provide simple
-solution that will be:
+**In this small side project I tried to use DevOps approach (CI, in cloud documentation
+building, testing frameworks) to make laboratory instructions more robust and error free.**
+I tried to provide simple solution that will be:
 
 * practical
 * will provide good results
@@ -49,7 +48,9 @@ resolved before actuall laboratory class.**
 
 .. _instructions: https://jug.dpieczynski.pl/lab-ead/Lab%2000%20-%20Wst%C4%99p.html
 
-.. image:: _static/ci-cd.jpg
+.. figure:: _static/ci-cd.jpg
+
+    Source: https://cacarer.com/wp/wp-content/uploads/2021/09/ci-cd.jpg
 
 Testing description
 ===================
@@ -61,13 +62,10 @@ solution in this repository.
 Hyperlinks testing
 ------------------
 
-What is the problem?
 Invalid links are annoying to the end user and delay the work of entire laboratory group.
 
-What is the solution?
 Sphinx has built in feature to test validity of the links during the build process.
 
-How to perform this solution?
 To perform such tests it is enough to run from command line following command:
 
 .. code-block:: bash
@@ -89,17 +87,14 @@ See the CI `job for hyperlinks testing`_ in this repository for details.
 Testing embedded code snippets
 ------------------------------
 
-What is the problem?
 Code snippets are essential for understanding and getting familiar with educational
 materials and it is crucial that they have correct syntax, are logically correct
 and are up to date with the required API version. Incorrect code snippets introduce
 confusion and delay.
 
-What is the solution?
 Sphinx can execute embedded Python code blocks / snippets and validate their output.
 See documentation_ on how to create such blocks in reStructuredText.
 
-How to perform this solution?
 Code blocks execution is performed during Sphinx build process and we can run it
 with following command:
 
@@ -160,21 +155,18 @@ Expected output, validated during build:
 Testing resources with authorization
 ------------------------------------
 
-What is the problem?
 Some resources may require more complex setup and some credentials authorization.
 For example, accessing resources via REST API that is protected with API key.
 API share point may change, the output may change and this can again lead to
 confusion among the students.
 
-What is the solution?
 We can test access to resource like REST API with range of tools, with the simplest
 being curl. The problem is that when doing that in CI, we do not want to share
-our credentials so we have to use GitHub Secrets_. We can think of those like
+our credentials so we have to use GitHub Secrets_. We can think of those like CI
 environment variables that are set for the repository and can be accessed during
-CI, but they are encrypted and safe.
+CI, but they are encrypted, safe and visible only to collaborators.
 
-How to perform this solution?
-We have to add a Secrets_ then in actions.yml file we can write:
+We have to add a Secrets_, then in actions.yml file we can write:
 
 .. _Secrets: https://docs.github.com/en/actions/security-guides/encrypted-secrets#using-encrypted-secrets-in-a-workflow
 
@@ -196,7 +188,6 @@ See the CI `job for testing authorized access`_ for details.
 More general and structured test with RobotTestingFramework
 -----------------------------------------------------------
 
-What is the problem?
 From previous point we can see that not everything may be tested with just Sphinx.
 In some occassions we may want to test some very general thing so we need a tool
 for that. Obviously, as we discuss docs CI, **we do not want to test too much.**
@@ -204,10 +195,8 @@ This is because diminishing returns will cause that we will make more tests and
 reward for that will be minimal. So we want a sweet spot, where we maximize ratio
 of reward to effort.
 
-What is the solution?
 There are many tools, but one I'm familiar with is RobotTestingFramework.
 
-How to perform this solution?
 We need to create a tests suite according to docs_. Below we test again
 access the key protected API.
 
