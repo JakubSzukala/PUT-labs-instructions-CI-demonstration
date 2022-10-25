@@ -49,7 +49,7 @@ resolved before actuall laboratory class.**
 
 .. _instructions: https://jug.dpieczynski.pl/lab-ead/Lab%2000%20-%20Wst%C4%99p.html
 
-.. image:: _static/cat.png
+.. image:: _static/ci-cd.jpg
 
 Testing description
 ===================
