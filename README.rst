@@ -1,8 +1,11 @@
-# PUT-labs-instructions-CI-demonstration
+PUT-labs-instructions-CI-demonstration
+======================================
 
 Repository containing Sphinx document that is a proof of concept for CI
 generated and tested laboratory instructions. For more details, refer the
-demo document itself in [releases](https://github.com/JakubSzukala/PUT-labs-instructions-CI-demonstration/releases/tag/put-labs-instructions-CI-demo.0.02).
+demo document itself in `releases`_.
+
+.. _releases: https://github.com/JakubSzukala/PUT-labs-instructions-CI-demonstration/releases/tag/put-labs-instructions-CI-demo.0.02
 
 Below is presented content of the tested document and the document itself can be found in source/example1.rst.
 
