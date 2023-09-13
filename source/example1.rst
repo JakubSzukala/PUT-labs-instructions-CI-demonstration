@@ -83,7 +83,7 @@ was suppose to download are now hosted in different place.
 See the CI `job for hyperlinks testing`_ in this repository for details.
 
 .. _link: https://matplotlib.org/
-.. _job for hyperlinks testing: https://github.com/JakubSzukala/PUT-labs-instructions-CI-demonstration/blob/main/.github/workflows/actions.yml#L28
+.. _job for hyperlinks testing: https://github.com/JakubSzukala/PUT-labs-instructions-CI-demonstration/blob/main/.github/workflows/actions.yml
 
 Testing embedded code snippets
 ------------------------------
@@ -114,7 +114,7 @@ In general, to perform such test we have to create two blocks:
 See the CI `job for code snippets testing`_ in this repository for details and `source code`_ for this document to see syntax of these blocks.
 
 .. _source code: https://raw.githubusercontent.com/JakubSzukala/PUT-labs-instructions-CI-demonstration/main/source/example1.rst
-.. _job for code snippets testing: https://github.com/JakubSzukala/PUT-labs-instructions-CI-demonstration/blob/main/.github/workflows/actions.yml#L44
+.. _job for code snippets testing: https://github.com/JakubSzukala/PUT-labs-instructions-CI-demonstration/blob/main/.github/workflows/actions.yml
 
 Test simple print statement
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -184,7 +184,7 @@ This will make an API call with API key restored from GitHub secrets.
 
 See the CI `job for testing authorized access`_ for details.
 
-.. _job for testing authorized access: https://github.com/JakubSzukala/PUT-labs-instructions-CI-demonstration/blob/main/.github/workflows/actions.yml#L63
+.. _job for testing authorized access: https://github.com/JakubSzukala/PUT-labs-instructions-CI-demonstration/blob/main/.github/workflows/actions.yml
 
 More general and structured test with RobotTestingFramework
 -----------------------------------------------------------
@@ -223,7 +223,7 @@ access the key protected API.
 
 See the CI `job for testing with robotframework`_ for details.
 
-.. _job for testing with robotframework: https://github.com/JakubSzukala/PUT-labs-instructions-CI-demonstration/blob/main/.github/workflows/actions.yml#L71
+.. _job for testing with robotframework: https://github.com/JakubSzukala/PUT-labs-instructions-CI-demonstration/blob/main/.github/workflows/actions.yml
 
 Summary
 =======
