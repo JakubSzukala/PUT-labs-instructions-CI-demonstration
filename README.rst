@@ -87,7 +87,7 @@ To perform such tests it is enough to run from command line following command:
 
     $ sphinx-build -E -W -b linkcheck source build/linkcheck
 
-External valid link_ that will be tested in CI (EAD laboratory instruction).
+External valid link_ that will be tested in CI (Matplotlib landing site).
 
 Any invalid link will cause an error during build. Link may become invalid because for
 example package maintainer changed name of the package or binaries that student
@@ -95,7 +95,7 @@ was suppose to download are now hosted in different place.
 
 See the CI `job for hyperlinks testing`_ in this repository for details.
 
-.. _link: https://jug.dpieczynski.pl/lab-ead/Lab%2002%20-%20SQL,%20RESTful%20API.html
+.. _link: https://matplotlib.org/
 .. _job for hyperlinks testing: https://github.com/JakubSzukala/PUT-labs-instructions-CI-demonstration/blob/main/.github/workflows/actions.yml#L28
 
 Testing embedded code snippets
