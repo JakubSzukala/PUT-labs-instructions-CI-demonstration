@@ -169,7 +169,7 @@ CI, but they are encrypted, safe and visible only to collaborators.
 
 We have to add a Secrets_, then in actions.yml file we can write:
 
-.. _Secrets: https://docs.github.com/en/actions/security-guides/encrypted-secrets#using-encrypted-secrets-in-a-workflow
+.. _Secrets: https://docs.github.com/en/actions/security-guides/encrypted-secrets
 
 .. code-block:: yaml
    :caption: Curl example with GH Secrets
