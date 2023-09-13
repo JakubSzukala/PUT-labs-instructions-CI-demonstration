@@ -46,10 +46,6 @@ Advantages of using CI with Sphinx and other DevOps tools:
 basis, which would ensure that most of the problems could be identified and
 resolved before actuall laboratory class.**
 
-.. figure:: _static/ci-cd.jpg
-
-    Source: https://cacarer.com/wp/wp-content/uploads/2021/09/ci-cd.jpg
-
 Testing description
 ===================
 
